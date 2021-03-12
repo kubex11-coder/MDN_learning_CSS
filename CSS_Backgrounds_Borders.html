@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Box</title>
+        <style>
+        html {
+            margin: 10px;
+        }
+        .box {
+        background-color: #454545;
+        }
+        h2 {
+        background-color: black;
+        color: white;
+        }
+        span {
+        background-color: blue
+        }
+        .box1 {
+        background-image: url(images/favorite-1.jpg);
+        padding: 200px;
+        background-repeat: no-repeat;
+        background-size: 100px 10em;
+        background-position: 20px 20%
+        }
+        /*Gradient*/
+        .box2 {
+        background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(208,45,193,1) 100%);
+        padding: 50px;
+        }
+        /*Shotrhand příkazy - Zdroj, umístění, velikost atd..*/
+        .box3 {   
+        padding: 150px;
+        margin: 30px;
+        background:
+        linear-gradient(105deg, rgba(255,255,255,.2) 39%, rgba(51,56,57,1) 96%) center center / 400px 200px no-repeat,
+        url(images/favorite-2.jpg) center / 100px 100px no-repeat, 
+        rebeccapurple;
+        }
+        /*Borders-ukázka hodnot*/
+        .box4 {
+         background-color: #567895;
+        border: 5px solid #0b385f;
+        border-bottom-style:dashed;
+        color: #fff;
+        }
+
+        h3 {
+        border-top: 1em double rebeccapurple;
+        border-bottom: 1em double rgb(24, 163, 78);
+        }
+      </style>
+
+      
+    </head>
+    <body>
+        <main>
+        <div class="box">
+            <h2>Background Colors</h2>
+            <p>Try changing the background <span>colors</span>.</p>
+          </div>
+          <div class="box1">
+          </div>
+          <div class="box2">
+        </div>
+        <div class="box3">
+        </div>
+        <div class="box4">
+            <h3>Borders</h2>
+            <p>Try changing the borders.</p>
+          </div>
+        </main>      
+        <footer>
+            <p>
+                MDN Documentation <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Backgrounds_and_borders">HERE</a>
+            </p>
+        </footer>
+    </body>
+</html>

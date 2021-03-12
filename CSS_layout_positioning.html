@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Postioning</title>
+        <style>
+ body {
+      position: relative;
+        width: 500px;
+        height: 1400px;
+        margin: 0 auto;
+      }
+
+      p {
+        background: aqua;
+        border: 3px solid blue;
+        padding: 10px;
+        margin: 10px;
+        margin-top: 60px;
+      }
+      h1 {
+  position: fixed;
+  /*The top: 0; is required to make it stick to the top of the screen.
+   We give the heading the same width as the content column and then give it a white background and some padding and margin, so the content won't be visible underneath it.*/
+  top: 0;
+  width: 500px;
+  margin-top: 0;
+  background: white;
+  padding: 10px;
+  z-index: 2;
+}
+      p:nth-of-type(1) {
+  position: absolute;
+  background: lime;
+  top: 10px;
+  right: 30px;
+  /*z-index je automaticky u postioned elementu 0 takže nastavením hodnoty 1 nebo -1 rozhodneme zda bude pod nebo nad tím elementem který je positioned*/ 
+  z-index: 1;
+  margin-top: 60px;
+}
+      .position {
+
+        position: absolute;
+        background: yellow;
+        top: 30px;
+        left: 30px;
+      }
+  
+      span {
+        background: red;
+        border: 1px solid black;
+      }
+      footer {
+      position: sticky;
+      top: 60px;
+      left: 40px;
+}
+      }
+        </style>
+    </head>
+    <body>
+        <h1>Basic document flow</h1>
+
+        <p>I am a basic block level element. My adjacent block level elements sit on new lines below me.</p>
+    
+        <p class="position">By default we span 100% of the width of our parent element, and our height is as tall as our child content. Our total width and height is our content + padding + border width/height.</p>
+    
+        <p>We are separated by our margins. Because of margin collapsing, we are separated by the width of one of our margins, not both.</p>
+    
+        <p>inline elements <span>like this one</span> and <span>this one</span> sit on the same line as one another, and adjacent text nodes, if there is space on the same line. Overflowing inline elements <span>wrap onto a new line if possible — like this one containing text</span>, or just go on to a new line if not, much like this image will do: <img src="long.jpg"></p>
+    <footer>
+        
+            MDN Documentation <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning">HERE</a>
+        
+    </footer>
+    </body>
+</html>

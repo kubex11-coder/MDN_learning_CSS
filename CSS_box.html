@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Box</title>
+        <style>
+             .box {
+            width: 350px;
+            height: 150px;
+            margin: 25px;
+            padding: 25px;
+            border: 5px solid black;
+          }
+          .sizing {
+            box-sizing:border-box;
+          }
+          .Border {
+        margin: 50px;
+        border-top: 5px dotted green;
+        border-right: 1px solid black;
+        border-bottom: 20px double rgb(23,45,145);
+        }
+
+            .Border1 {
+        border: 1px solid #333333;
+        border-top-style: dotted;
+        border-right-width: 20px;
+        border-bottom-color: hotpink;
+        }
+        .Padding {
+        border: 5px solid #666;
+        padding-top: 40px;
+        padding-right: 20px;
+        padding-bottom: 40px;
+        padding-left: 4em;
+        }
+
+        .Padding1 {
+        padding: 40px;
+        }
+        span {
+            margin: 20px;
+            padding: 20px;
+            width: 80px;
+            height: 50px;
+            background-color: lightblue;
+            border: 2px solid blue;
+            display: inline-block;
+          }   
+          .links-list a {
+        background-color: rgb(179,57,81);
+        color: #fff;
+        text-decoration: none;
+        padding: 1em 2em;
+        display: flex;
+        display: inline-block;
+        }
+
+        .links-list a:hover {
+         background-color: rgb(66, 28, 40);
+         color: #fff;
+        }
+    
+        </style>
+    </head>
+    <body>
+        <!--Margin ukázka-->
+        <h1 class="box"> Hello you!</h1>
+        <h1 class="box sizing"> Hello you again!</h1>
+        <!--Borders ukázka-->
+        <div class="Border">
+            <div class="Border1">Change my borders.</div>
+          </div>
+        <!--Padding ukázka-->
+          <div class="Padding">
+            <div class="Padding1">Change my padding.</div>
+          </div>   
+        <!--Inline box ukázka - span element-->
+          <p>
+            I am a paragraph and this is a <span>span</span> inside that paragraph. A span is an inline element and so does not respect width and height.
+        </p>   
+        <!--Inline box ukázka - a element-->
+        <nav>
+            <ul class="links-list">
+              <li><a href="">Link one</a></li>
+              <li><a href="">Link two</a></li>
+              <li><a href="">Link three</a></li>
+            </ul>
+          </nav>    
+              
+        <footer>
+            <p>
+                MDN Documentation <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/The_box_model">HERE</a>
+            </p>
+        </footer>
+    </body>
+</html>

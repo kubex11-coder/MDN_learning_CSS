@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Flexbox 0 — starting code</title>
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      header {
+        background: purple;
+        height: 100px;
+      }
+
+      h1 {
+        text-align: center;
+        color: white;
+        line-height: 100px;
+        margin: 0;
+      }
+
+      article {
+        padding: 10px;
+        margin: 10px;
+        background: aqua;
+        /*flex 200px přidáno po flex-wrap pravidle v elementu section, kdy flex itemy byly širší než flex container*/
+        flex: 200px;
+      }
+
+      section {
+        display: flex;
+        /*flex-direction: column; - změní flow flex kolonek*/
+        flex-direction: row;
+        flex-wrap: wrap;
+        /*flex-direction a flex-wrap mají shorthand flex-flow: row wrap;*/
+        }
+        .section2 article {
+        padding: 10px;
+        margin: 10px;
+        background: rgba(120, 56, 42, 0.3);
+        flex: 1;
+        /*flex 1 je ok, každá flex item(article) je jedna kolonka*/
+        /* flex: 1 200px;"Each flex item will first be given 200px of the available space. After that, the rest of the available space will be shared out according to the proportion units."*/
+      }
+
+      .section2 {
+        display: flex;
+      }
+        .section2 article:nth-of-type(3) {
+        flex: 2;
+            /*flex 2 znamená že daná kolonka zabere místa jako 2 kolonky*/
+     }
+        button {
+        font-size: 18px;
+        line-height: 1.5;
+        width: 15%;
+      }
+
+      div {
+        height: 100px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      button:first-child {
+        align-self: flex-end;
+        order: 1;
+                /*By default, all flex items have an order value of 0.
+                Flex items with higher order values set on them will appear later in the display order than items with lower order values.*/
+        }
+        .section3 article {
+         flex: 1 200px;
+        }
+
+         .section3 article:nth-of-type(3) {
+         flex: 3 200px;
+        display: flex;
+        flex-flow: column;
+         }
+        .section3 article:nth-of-type(3) div:first-child {
+        flex: 1 100px;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-around;
+        }
+
+        .section3 button:first-child {
+            align-self: center
+        }
+        .section3 button {
+        flex: 1 auto;
+        margin: 5px;
+        font-size: 18px;
+        line-height: 1.5;
+        }
+
+      
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Sample flexbox example</h1>
+    </header>
+
+    <section>
+      <article>
+        <h2>First article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Second article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Third article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+      </article>
+      <article>
+        <h2>First article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Second article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Third article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+      </article>
+      <article>
+        <h2>First article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Second article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Third article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+      </article>
+      <article>
+        <h2>First article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Second article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Third article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+      </article>
+      <article>
+        <h2>First article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Second article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+      </article>
+
+      <article>
+        <h2>Third article</h2>
+
+        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+
+        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+      </article>
+    </section>
+    <section class="section2">
+        <article>
+          <h2>First article</h2>
+  
+          <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+        </article>
+  
+        <article>
+          <h2>Second article</h2>
+  
+          <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+        </article>
+
+        <article>
+            <h2>Second article</h2>
+    
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+          </article>
+  
+        <article>
+          <h2>Third article</h2>
+  
+          <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+  
+          <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+        </article>
+      </section>
+      <div>
+        <button>Smile</button>
+        <button>Laugh</button>
+        <button>Wink</button>
+        <button>Shrug</button>
+        <button>Blush</button>
+      </div>
+      <section class="section3">
+        <article>
+          <h2>First article</h2>
+  
+          <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+        </article>
+  
+        <article>
+          <h2>Second article</h2>
+  
+          <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+        </article>
+  
+        <article>
+          <div>
+            <button>Smile</button>
+            <button>Laugh</button>
+            <button>Wink</button>
+            <button>Shrug</button>
+            <button>Blush</button>
+          </div>
+          <div>
+            <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+          </div>
+          <div>
+            <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
+          </div>
+        </article>
+      </section>
+        <footer>
+            <p>
+                MDN Documentation <a id="footer"; href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox">Here</a>
+            </p>
+        </footer>
+    </body>
+</html>
